@@ -1,0 +1,65 @@
+doctype html
+html
+  head
+    title Persons
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous")
+    script( src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js")
+    script( src="script.js", type = 'text/javascript')
+
+
+
+  body
+  div.container
+      div
+          input(type="text" class="searchField" id="searchName" name="PersonName" placeholder="name") 
+          button(type="submit" class="btn btn-primary" onclick = 'go()') search amount by name 
+      div
+      p #{personAmount}
+      div
+
+        a(href='/sortPersonsByNumericalOrder').btn.btn-primary Sort by amount
+        a(href='/sortPersonsByAlphabeticalOrder').btn.btn-secondary Sort by name
+        a(href='/addperson').btn.btn-primary Add person
+        
+      div
+      
+        table.table.table-striped
+          tbody
+            thead
+              tr
+                td Name
+                td Amount
+            each person in persons
+              tr
+                td #{person.name}
+                td #{person.amount}
+        div
+      
+        table.table.table-striped
+          tbody
+            thead
+              tr
+                td Total amount of persons 
+                td Total amount
+              tr
+                td #{totalAmountOfPersons}
+                td #{totalAmount}
+      div
+        a(href='/amountOfAllNames').btn.btn-primary Total amount of persons
+        a(href='/totalAmount').btn.btn-secondary Total amount
+script.
+  $('#btn4').on('click', function() {
+  console.log()
+  alert("lol")
+  alert(amountOfAllNames())
+  })
+script.
+  function lol() {
+    alert("lol1")
+    alert(amountOfAllNames())
+  }
+script.
+  function go() {
+    var input = document.getElementById('searchName').value
+    window.location = "http://localhost:3000/" + input;
+  }

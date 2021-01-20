@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    title Add person
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous")
+    script(script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous")
+  body
+    h1 New person
+    form(action='/addperson', method='POST')
+      div(class="form-group")
+        input(type="text" class="form-control"  name = "name" placeholder="Name") 
+      div(class="form-group")
+        input(type="number" class="form-control" name="amount" placeholder="Amount") 
+      div
+        button(type="submit" class="btn btn-primary") Add
